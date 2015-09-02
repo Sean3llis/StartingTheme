@@ -35,12 +35,7 @@ function understrap_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -54,11 +49,6 @@ function understrap_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
-    
-    /*
-	 * Adding Thumbnail basic support
-	 */
-    add_theme_support( "post-thumbnails" );
 
 	/*
 	 * Enable support for Post Formats.
@@ -76,30 +66,3 @@ function understrap_setup() {
 }
 endif; // understrap_setup
 add_action( 'after_setup_theme', 'understrap_setup' );
-
-/**
-/* Removes Adminbar - Comment out if you want see the bar. 
-*/
-add_filter('show_admin_bar', '__return_false');
-
-/**
-/* Adding the Read more link to excerpts
-*/
-/*function new_excerpt_more( $more ) {
-	return ' <p><a class="read-more btn btn-default" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'understrap') . '</a></p>';
-}
-add_filter( 'excerpt_more', 'new_excerpt_more' );*/
-/* Removes the ... from the excerpt read more link */
-function custom_excerpt_more( $more ) {
-	return '';
-}
-add_filter( 'excerpt_more', 'custom_excerpt_more' );
-
-/* Adds a custom read more link to all excerpts, manually or automatically generated */
-add_theme_support( 'post-thumbnails' );
-
-function all_excerpts_get_more_link($post_excerpt) {
-
-    return $post_excerpt . ' [...]<p><a class="btn btn-default understrap-read-more-link" href="'. get_permalink($post->ID) . '">' . 'Read More...' . '</a></p>';
-}
-add_filter('wp_trim_excerpt', 'all_excerpts_get_more_link');

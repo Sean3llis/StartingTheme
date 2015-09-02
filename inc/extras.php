@@ -13,11 +13,6 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function understrap_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'understrap_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.

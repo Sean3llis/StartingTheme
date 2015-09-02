@@ -20,10 +20,11 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./sass/**/modules/*.scss', ['sass']);
     gulp.watch('./css/theme.css', ['minifycss']);
 });
 
-gulp.task('minifycss', ['cleancss'], function(){
+gulp.task('minifycss', function(){
   return gulp.src('./css/*.css')
     .pipe(plumber())
     .pipe(rename({suffix: '.min'}))
@@ -32,7 +33,7 @@ gulp.task('minifycss', ['cleancss'], function(){
 }); 
 
 gulp.task('cleancss', function() {
-  return gulp.src('./css/*.min.css', { read: false }) // much faster 
+  return gulp.src('./css/*.min.css', { read: false, aggressiveMerging: false }) // much faster 
     .pipe(ignore('theme.css'))
     .pipe(rimraf());
 });

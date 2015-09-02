@@ -1,0 +1,21 @@
+.hero-base {
+	height: 600px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	@media (min-width: $screen-md-min) {
+		background-size: contain;
+	}
+
+	.titles {
+		@include vertical-align;
+		text-align: center;
+		color: $font-light;
+		.main-title {
+			font-size: $xlarge;
+		}
+		.sub-title {
+			// font-size: $medium;
+		}
+	}
+}
