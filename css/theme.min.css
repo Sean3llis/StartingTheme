@@ -8127,6 +8127,6 @@ button.close {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
-    color: blue; }
+    color: #eee; }
     .hero-base .titles .main-title {
       font-size: 2.8em; }

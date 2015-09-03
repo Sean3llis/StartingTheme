@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var minifyCSS = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -12,11 +12,9 @@ var rimraf = require('gulp-rimraf');
 
 
 gulp.task('sass', function () {
-    console.log('=========================================');
-    console.log('running sass');
     gulp.src('sass/**/*.scss')
         .pipe(sass({
-            outputStyle: 'compressed'
+            style: 'compressed'
         }))
         .pipe(rename('theme.min.css'))
         .pipe(gulp.dest('css/'));
