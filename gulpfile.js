@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var watch = require('gulp-watch');
 var minifyCSS = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -12,25 +12,20 @@ var rimraf = require('gulp-rimraf');
 
 
 gulp.task('sass', function () {
-    gulp.src('./sass/*.scss')
-        .pipe(plumber())
-        .pipe(sass())
-        .pipe(gulp.dest('./css'));
+    console.log('=========================================');
+    console.log('running sass');
+    gulp.src('sass/**/*.scss')
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(rename('theme.min.css'))
+        .pipe(gulp.dest('css/'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./sass/**/modules/*.scss', ['sass']);
-    gulp.watch('./css/theme.css', ['minifycss']);
+    gulp.watch('sass/**/*.scss', ['sass']);
 });
 
-gulp.task('minifycss', function(){
-  return gulp.src('./css/*.css')
-    .pipe(plumber())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifyCSS({keepBreaks:true}))
-    .pipe(gulp.dest('./css/'));
-}); 
 
 gulp.task('cleancss', function() {
   return gulp.src('./css/*.min.css', { read: false, aggressiveMerging: false }) // much faster 
