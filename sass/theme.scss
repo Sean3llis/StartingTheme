@@ -34,9 +34,9 @@ Import all needed 3rd party sass files plus your own style and variables
 
 
 // Set up + globals
-@import "modules/mixins";
-@import "modules/variables";
-@import "modules/globals";
+@import "variables";
+@import "mixins";
+@import "globals";
 // partials
 @import "modules/hero";
 @import "modules/icons";
