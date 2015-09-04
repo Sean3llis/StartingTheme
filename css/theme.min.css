@@ -8112,15 +8112,84 @@ button.close {
   max-width: 1200px;
   margin: 0px auto; }
 
-.hero-base {
+.main-title {
+  font-size: 2.8em; }
+
+.sub-title {
+  font-size: 1.4em; }
+
+.cta {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 18px; }
+  .cta:focus,
+  .cta.focus {
+    color: #fff;
+    background-color: transparent;
+    border-color: #bfbfbf; }
+  .cta:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #e0e0e0; }
+  .cta:active,
+  .cta.active,
+  .open > .cta.dropdown-toggle {
+    color: #fff;
+    background-color: transparent;
+    border-color: #e0e0e0; }
+    .cta:active:hover,
+    .cta:active:focus,
+    .cta:active.focus,
+    .cta.active:hover,
+    .cta.active:focus,
+    .cta.active.focus,
+    .open > .cta.dropdown-toggle:hover,
+    .open > .cta.dropdown-toggle:focus,
+    .open > .cta.dropdown-toggle.focus {
+      color: #fff;
+      background-color: transparent;
+      border-color: #bfbfbf; }
+  .cta:active,
+  .cta.active,
+  .open > .cta.dropdown-toggle {
+    background-image: none; }
+  .cta.disabled,
+  .cta.disabled:hover,
+  .cta.disabled:focus,
+  .cta.disabled.focus,
+  .cta.disabled:active,
+  .cta.disabled.active,
+  .cta[disabled],
+  .cta[disabled]:hover,
+  .cta[disabled]:focus,
+  .cta[disabled].focus,
+  .cta[disabled]:active,
+  .cta[disabled].active,
+  fieldset[disabled] .cta,
+  fieldset[disabled] .cta:hover,
+  fieldset[disabled] .cta:focus,
+  fieldset[disabled] .cta.focus,
+  fieldset[disabled] .cta:active,
+  fieldset[disabled] .cta.active {
+    background-color: transparent;
+    border-color: #fff; }
+  .cta .badge {
+    color: transparent;
+    background-color: #fff; }
+  .cta:hover {
+    text-decoration: none; }
+
+.hero-full {
   height: 600px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
   @media (min-width: 992px) {
-    .hero-base {
+    .hero-full {
       background-size: contain; } }
-  .hero-base .titles {
+  .hero-full .titles {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -8128,5 +8197,20 @@ button.close {
     transform: translateY(-50%);
     text-align: center;
     color: #eee; }
-    .hero-base .titles .main-title {
-      font-size: 2.8em; }
+
+.hero-col3 .col-sm-4 {
+  padding: 0px; }
+
+.hero-col3 .tile {
+  height: 600px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+  .hero-col3 .tile .titles {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    color: #eee; }

@@ -9,10 +9,12 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'partials/hero' ); ?>
+<?php $hero_type = get_field('hero_type'); ?>
+
+<?php get_template_part( 'partials/hero', $hero_type ); ?>
 
 
-<?php get_template_part( 'partials/icons' ); ?>
+<?php // get_template_part( 'partials/icons' ); ?>
 
 
 <br>

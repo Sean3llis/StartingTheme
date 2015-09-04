@@ -1,9 +1,4 @@
 <?php
-/**
- * understrap functions and definitions
- *
- * @package understrap
- */
 
 /**
  * Theme setup and custom theme supports.

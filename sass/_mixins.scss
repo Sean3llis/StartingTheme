@@ -5,3 +5,20 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+@mixin background-full($height: 600px) {
+	height: $height;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	@media (min-width: $screen-md-min) {
+		background-size: contain;
+	}
+}
+
+@mixin background-cover($height: 600px) {
+	height: $height;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}

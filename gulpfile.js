@@ -13,9 +13,8 @@ var rimraf = require('gulp-rimraf');
 
 gulp.task('sass', function () {
     gulp.src('sass/**/*.scss')
-        .pipe(sass({
-            style: 'compressed'
-        }))
+        .pipe(plumber())
+        .pipe(sass())
         .pipe(rename('theme.min.css'))
         .pipe(gulp.dest('css/'));
 });
